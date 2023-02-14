@@ -1,3 +1,6 @@
+# html tests
+tests/html-tests
+
 # Logs
 logs
 *.log
