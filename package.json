@@ -1,6 +1,6 @@
 {
   "name": "vue2-debounce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This module is a break away from [vue-debounce](https://github.com/dhershman1/vue-debounce) but specifically written for vue2",
   "main": "dist/vue2-debounce.min.js",
   "types": "types/index.d.ts",
