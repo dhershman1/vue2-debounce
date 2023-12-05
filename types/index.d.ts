@@ -12,16 +12,15 @@ interface DirectiveObject {
 }
 
 interface DebounceInstance<A extends unknown[]> {
-  (...args: A): void,
+  (...args: A): void | Promise<void>,
   cancel(): void,
 }
 
 interface Debounce {
-  <A extends unknown[]>(fn: (...args: A) => void, wait: number | string): DebounceInstance<A>
+  <A extends unknown[]>(fn: (...args: A) => void | Promise<void>, wait: number | string): DebounceInstance<A>
 }
 
 declare const debounce: Debounce
-declare const vue3Debounce: (opts: PluginConfig) => DirectiveObject
 
 export interface PluginObject {
   // We could type the Vue object here instead of "any" but that would require making Vue a devDependency and it doesn't seem worth it.
@@ -31,5 +30,5 @@ export interface PluginObject {
 
 declare const pluginObject: PluginObject
 
-export { debounce, vue3Debounce, DebounceInstance, DirectiveObject }
+export { debounce, DebounceInstance, DirectiveObject }
 export default pluginObject
